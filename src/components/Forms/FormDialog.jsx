@@ -5,7 +5,7 @@ import DialogActions from "@material-ui/core/DialogActions";
 import DialogContent from "@material-ui/core/DialogContent";
 import DialogTitle from "@material-ui/core/DialogTitle";
 import { TextInput } from "./index";
-import { WEBHOOK_URL } from "../../../";
+// import { WEBHOOK_URL } from "../../../";
 
 const FormDialog = (props) => {
   const [description, setDescription] = useState("");
@@ -72,7 +72,9 @@ const FormDialog = (props) => {
           description,
       };
 
-      fetch(WEBHOOK_URL, {
+      const url = process.env.REACT_APP_SLACK;
+
+      fetch(url, {
         method: "POST",
         body: JSON.stringify(payload),
       }).then(() => {
