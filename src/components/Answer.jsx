@@ -24,9 +24,9 @@ const Answer = (props) => {
     <Button
       className={classes.button}
       variant="outlined"
-      onClick={() => props.select(props.content, props.nextId)}
+      onClick={() => props.select(props.answer.content, props.answer.nextId)}
     >
-      {props.content}
+      {props.answer.content}
     </Button>
   );
 };
